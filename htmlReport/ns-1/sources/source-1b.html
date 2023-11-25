@@ -1,0 +1,464 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > UserDashboard</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.mon</a>
+</div>
+
+<h1>Coverage Summary for Class: UserDashboard (com.sakib)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UserDashboard</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/140)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">UserDashboard$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">UserDashboard$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">UserDashboard$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">UserDashboard$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">UserDashboard$5</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/156)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.mon;
+&nbsp;
+&nbsp;import javax.swing.*;
+&nbsp;import java.awt.*;
+&nbsp;import java.awt.event.ActionEvent;
+&nbsp;import java.awt.event.ActionListener;
+&nbsp;import java.awt.event.MouseAdapter;
+&nbsp;import java.awt.event.MouseEvent;
+&nbsp;import java.sql.ResultSet;
+&nbsp;import java.sql.SQLException;
+&nbsp;
+&nbsp;public class UserDashboard {
+&nbsp;
+&nbsp;    int User_ID,Login_IDS;
+&nbsp;    int total_balance;
+&nbsp;    String user_name,profile_pic;
+<b class="nc">&nbsp;    Color DashBoradBgColor = new Color(19,26,43);</b>
+<b class="nc">&nbsp;    Color DashBoradCardColor = new Color(31,41,64);</b>
+&nbsp;
+<b class="nc">&nbsp;    UserDashboard(int userId,int login_id){</b>
+<b class="nc">&nbsp;        User_ID = userId;</b>
+<b class="nc">&nbsp;        Login_IDS = login_id;</b>
+&nbsp;
+<b class="nc">&nbsp;        CustomModelSakib ob = new CustomModelSakib();</b>
+&nbsp;
+<b class="nc">&nbsp;        String query = &quot;SELECT * FROM user where User_ID=&#39;&quot;+userId+&quot;&#39;&quot;;</b>
+<b class="nc">&nbsp;        String query2 = &quot;SELECT * FROM login where Login_ID=&#39;&quot;+login_id+&quot;&#39;&quot;;</b>
+<b class="nc">&nbsp;        String query3 = &quot;SELECT * FROM accounts where User_ID=&#39;&quot;+userId+&quot;&#39;&quot;;</b>
+&nbsp;
+<b class="nc">&nbsp;        ResultSet rzm = ob.GetData(query);</b>
+<b class="nc">&nbsp;        ResultSet rzm2 = ob.GetData(query2);</b>
+<b class="nc">&nbsp;        ResultSet rzm3 = ob.GetData(query3);</b>
+&nbsp;
+&nbsp;        try{
+<b class="nc">&nbsp;            while(rzm.next()){</b>
+<b class="nc">&nbsp;                user_name = rzm.getString(&quot;Name&quot;);</b>
+&nbsp;            }
+<b class="nc">&nbsp;            while(rzm2.next()){</b>
+<b class="nc">&nbsp;                profile_pic = rzm2.getString(&quot;Profile_Picture&quot;);</b>
+&nbsp;            }
+<b class="nc">&nbsp;            while(rzm3.next()){</b>
+<b class="nc">&nbsp;                total_balance = Integer.valueOf(rzm3.getString(&quot;Balance&quot;));</b>
+&nbsp;            }
+<b class="nc">&nbsp;        } catch (SQLException e) {</b>
+<b class="nc">&nbsp;            throw new RuntimeException(e);</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public static void main(String[] args) {
+&nbsp;//        UserDashboard ob = new UserDashboard(1,1);
+&nbsp;//        ob.loadUserDashboard();
+<b class="nc">&nbsp;    }</b>
+&nbsp;    public void loadUserDashboard(){
+<b class="nc">&nbsp;        CreateWindow dashWindow = new CreateWindow(10,10,1350,700);</b>
+&nbsp;
+<b class="nc">&nbsp;        CustomModelSakib ob1 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob2 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob3 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob4 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob5 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob6 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob7 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob8 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob9 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob10 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob11 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;        CustomModelSakib ob12 = new CustomModelSakib();</b>
+&nbsp;
+<b class="nc">&nbsp;        UsedImages obimg = new UsedImages();</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        String dir = System.getProperty(&quot;user.dir&quot;);</b>
+<b class="nc">&nbsp;        String userPro_Pic = dir+&quot;\\src\\uploads\\&quot;+profile_pic;</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        ob1.CreateRadiusPanel(0,10,250,688);</b>
+<b class="nc">&nbsp;        ob2.CreateResizeImage(50,75,150,150,userPro_Pic);</b>
+<b class="nc">&nbsp;        ob1.CreateImage(50,75,150,150,obimg.profile_cover);</b>
+&nbsp;
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        JPanel textPanel = new JPanel();</b>
+<b class="nc">&nbsp;        textPanel.setBounds(0,220,250,50);</b>
+<b class="nc">&nbsp;        textPanel.setBackground(ob1.DashBoradCardColor);</b>
+&nbsp;
+<b class="nc">&nbsp;        JLabel userName = new JLabel(user_name,SwingConstants.CENTER);</b>
+<b class="nc">&nbsp;        userName.setFont(ob1.customFont4);</b>
+<b class="nc">&nbsp;        userName.setForeground(Color.WHITE);</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        ob3.CreateImage(75,350,100,100,obimg.money_bag);</b>
+&nbsp;
+<b class="nc">&nbsp;        JPanel textPanel2 = new JPanel();</b>
+<b class="nc">&nbsp;        textPanel2.setBounds(0,470,250,50);</b>
+<b class="nc">&nbsp;        textPanel2.setBackground(ob1.DashBoradCardColor);</b>
+&nbsp;
+<b class="nc">&nbsp;        JLabel balance_label = new JLabel(&quot;BDT: &quot;+total_balance+&quot;Tk&quot;,SwingConstants.CENTER);</b>
+<b class="nc">&nbsp;        balance_label.setForeground(Color.white);</b>
+<b class="nc">&nbsp;        balance_label.setFont(ob1.customFont3);</b>
+&nbsp;
+<b class="nc">&nbsp;        textPanel.add(userName);</b>
+<b class="nc">&nbsp;        textPanel2.add(balance_label);</b>
+&nbsp;
+<b class="nc">&nbsp;        ob1.CreateButton(75,600,100,30,&quot;Logout&quot;);</b>
+<b class="nc">&nbsp;        ob1.button.addActionListener(new ActionListener() {</b>
+&nbsp;            @Override
+&nbsp;            public void actionPerformed(ActionEvent e) {
+<b class="nc">&nbsp;                dashWindow.frame.setVisible(false);</b>
+<b class="nc">&nbsp;                LoginUser ob =  new LoginUser();</b>
+<b class="nc">&nbsp;                ob.loadUserLogin();</b>
+&nbsp;            }
+&nbsp;        });
+&nbsp;
+<b class="nc">&nbsp;        dashWindow.mainpanel.add(ob1.panel);</b>
+<b class="nc">&nbsp;        ob1.panel.add(ob1.image_label);</b>
+<b class="nc">&nbsp;        ob1.panel.add(ob2.image_label);</b>
+<b class="nc">&nbsp;        ob1.panel.add(ob3.image_label);</b>
+<b class="nc">&nbsp;        ob1.panel.add(textPanel);</b>
+<b class="nc">&nbsp;        ob1.panel.add(textPanel2);</b>
+<b class="nc">&nbsp;        ob1.panel.add(ob1.button);</b>
+&nbsp;
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        ob4.CreateLabel(320,25,200,50,&quot;Dashboard&quot;,ob1.customFont3);</b>
+<b class="nc">&nbsp;        ob4.label.setForeground(Color.white);</b>
+&nbsp;
+<b class="nc">&nbsp;        ob5.CreatePanel(320,80,200,120);</b>
+<b class="nc">&nbsp;        ob5.panel.setBackground(DashBoradCardColor);</b>
+<b class="nc">&nbsp;        ob5.CreateLabel(20,0,150,50,&quot;5.7%      Interest Rate&quot;,ob1.customFont);</b>
+<b class="nc">&nbsp;        ob5.label.setFont(new Font(&quot;Helvetica&quot;,Font.BOLD,14));</b>
+<b class="nc">&nbsp;        ob5.label.setForeground(Color.WHITE);</b>
+<b class="nc">&nbsp;        ob6.CreateLabel(20,70,150,50,&quot;Savings Account&quot;,ob1.customFont2);</b>
+<b class="nc">&nbsp;        ob6.label.setFont(new Font(&quot;Helvetica&quot;,Font.BOLD,10));</b>
+<b class="nc">&nbsp;        ob6.label.setForeground(Color.WHITE);</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        ob5.CreateImage(20,30,60,60,obimg.sound_waves);</b>
+&nbsp;
+<b class="nc">&nbsp;        ob5.panel.add(ob5.label);</b>
+<b class="nc">&nbsp;        ob5.panel.add(ob6.label);</b>
+<b class="nc">&nbsp;        ob5.panel.add(ob5.image_label);</b>
+&nbsp;
+<b class="nc">&nbsp;        ob7.CreatePanel(550,80,200,120);</b>
+<b class="nc">&nbsp;        ob7.panel.setBackground(DashBoradCardColor);</b>
+<b class="nc">&nbsp;        ob7.CreateLabel(20,0,150,50,&quot;10     Transactions&quot;,ob1.customFont);</b>
+<b class="nc">&nbsp;        ob7.label.setFont(new Font(&quot;Helvetica&quot;,Font.BOLD,14));</b>
+<b class="nc">&nbsp;        ob7.label.setForeground(Color.WHITE);</b>
+<b class="nc">&nbsp;        ob8.CreateLabel(20,70,150,50,&quot;Total Transactions&quot;,ob1.customFont2);</b>
+<b class="nc">&nbsp;        ob8.label.setFont(new Font(&quot;Helvetica&quot;,Font.BOLD,10));</b>
+<b class="nc">&nbsp;        ob8.label.setForeground(Color.WHITE);</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        ob7.CreateImage(20,30,60,60,obimg.transaction);</b>
+&nbsp;
+<b class="nc">&nbsp;        ob7.panel.add(ob7.label);</b>
+<b class="nc">&nbsp;        ob7.panel.add(ob8.label);</b>
+<b class="nc">&nbsp;        ob7.panel.add(ob7.image_label);</b>
+&nbsp;
+<b class="nc">&nbsp;        ob9.CreatePanel(775,80,200,120);</b>
+<b class="nc">&nbsp;        ob9.panel.setBackground(DashBoradCardColor);</b>
+<b class="nc">&nbsp;        ob9.CreateLabel(20,0,150,50,&quot;SWSSWXYNV&quot;,ob1.customFont);</b>
+<b class="nc">&nbsp;        ob9.label.setFont(new Font(&quot;Helvetica&quot;,Font.BOLD,14));</b>
+<b class="nc">&nbsp;        ob9.label.setForeground(Color.WHITE);</b>
+<b class="nc">&nbsp;        ob10.CreateLabel(20,70,150,50,&quot;SWIFT CODE&quot;,ob1.customFont2);</b>
+<b class="nc">&nbsp;        ob10.label.setFont(new Font(&quot;Helvetica&quot;,Font.BOLD,10));</b>
+<b class="nc">&nbsp;        ob10.label.setForeground(Color.WHITE);</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        ob9.CreateImage(20,30,60,60,obimg.sound_wave);</b>
+&nbsp;
+<b class="nc">&nbsp;        ob9.panel.add(ob9.label);</b>
+<b class="nc">&nbsp;        ob9.panel.add(ob10.label);</b>
+<b class="nc">&nbsp;        ob9.panel.add(ob9.image_label);</b>
+&nbsp;
+<b class="nc">&nbsp;        ob11.CreatePanel(1000,80,200,120);</b>
+<b class="nc">&nbsp;        ob11.panel.setBackground(DashBoradCardColor);</b>
+<b class="nc">&nbsp;        ob11.CreateLabel(20,0,150,50,&quot;Location&quot;,ob1.customFont);</b>
+<b class="nc">&nbsp;        ob11.label.setFont(new Font(&quot;Helvetica&quot;,Font.BOLD,14));</b>
+<b class="nc">&nbsp;        ob11.label.setForeground(Color.WHITE);</b>
+<b class="nc">&nbsp;        ob12.CreateLabel(20,70,150,50,&quot;Airport, Dhaka&quot;,ob1.customFont2);</b>
+<b class="nc">&nbsp;        ob12.label.setFont(new Font(&quot;Helvetica&quot;,Font.BOLD,10));</b>
+<b class="nc">&nbsp;        ob12.label.setForeground(Color.WHITE);</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        ob11.CreateImage(20,32,60,60,obimg.location);</b>
+&nbsp;
+<b class="nc">&nbsp;        ob11.panel.add(ob11.label);</b>
+<b class="nc">&nbsp;        ob11.panel.add(ob12.label);</b>
+<b class="nc">&nbsp;        ob11.panel.add(ob11.image_label);</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        ob2.CreateHoverButton(320,250,200,160,&quot;Deposite Amount&quot;,obimg.deposit);</b>
+<b class="nc">&nbsp;        ob3.CreateHoverButton(550,250,200,160,&quot;Withdraw Amount&quot;,obimg.withdraw);</b>
+<b class="nc">&nbsp;        ob4.CreateHoverButton(775,250,200,160,&quot;Transfer Amount&quot;,obimg.money);</b>
+<b class="nc">&nbsp;        ob5.CreateHoverButton(1000,250,200,160,&quot;Transaction History&quot;,obimg.bank_statement);</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        ob2.hpanel.addMouseListener(new MouseAdapter() {</b>
+&nbsp;            @Override
+&nbsp;            public void mouseClicked(MouseEvent e) {
+<b class="nc">&nbsp;                DepositUser ob = new DepositUser(User_ID,Login_IDS,dashWindow.frame);</b>
+<b class="nc">&nbsp;                ob.loadDeposit();</b>
+&nbsp;            }
+&nbsp;        });
+&nbsp;
+<b class="nc">&nbsp;        ob3.hpanel.addMouseListener(new MouseAdapter() {</b>
+&nbsp;            @Override
+&nbsp;            public void mouseClicked(MouseEvent e) {
+<b class="nc">&nbsp;                WithdrawUser ob = new WithdrawUser(User_ID,Login_IDS,dashWindow.frame);</b>
+<b class="nc">&nbsp;                ob.loadWithdraw();</b>
+&nbsp;            }
+&nbsp;        });
+&nbsp;
+<b class="nc">&nbsp;        ob4.hpanel.addMouseListener(new MouseAdapter() {</b>
+&nbsp;            @Override
+&nbsp;            public void mouseClicked(MouseEvent e) {
+<b class="nc">&nbsp;                TransferUser ob = new TransferUser(User_ID,Login_IDS,dashWindow.frame);</b>
+<b class="nc">&nbsp;                ob.loadTransfer();</b>
+&nbsp;            }
+&nbsp;        });
+&nbsp;
+<b class="nc">&nbsp;        ob5.hpanel.addMouseListener(new MouseAdapter() {</b>
+&nbsp;            @Override
+&nbsp;            public void mouseClicked(MouseEvent e) {
+<b class="nc">&nbsp;                TransactionUser ob = new TransactionUser(User_ID,Login_IDS);</b>
+<b class="nc">&nbsp;                ob.loadTransactions();</b>
+&nbsp;            }
+&nbsp;        });
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        JLabel titleLabel = new JLabel(&quot;Smartie Commercial Bank&quot;);</b>
+<b class="nc">&nbsp;        titleLabel.setBounds(10,1,300,30);</b>
+<b class="nc">&nbsp;        titleLabel.setForeground(Color.white);</b>
+<b class="nc">&nbsp;        dashWindow.panel.add(titleLabel);</b>
+&nbsp;
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        dashWindow.mainpanel.add(ob2.hpanel);</b>
+<b class="nc">&nbsp;        dashWindow.mainpanel.add(ob3.hpanel);</b>
+<b class="nc">&nbsp;        dashWindow.mainpanel.add(ob4.hpanel);</b>
+<b class="nc">&nbsp;        dashWindow.mainpanel.add(ob5.hpanel);</b>
+<b class="nc">&nbsp;        dashWindow.mainpanel.add(ob4.label);</b>
+<b class="nc">&nbsp;        dashWindow.mainpanel.add(ob5.panel);</b>
+<b class="nc">&nbsp;        dashWindow.mainpanel.add(ob7.panel);</b>
+<b class="nc">&nbsp;        dashWindow.mainpanel.add(ob9.panel);</b>
+<b class="nc">&nbsp;        dashWindow.mainpanel.add(ob11.panel);</b>
+<b class="nc">&nbsp;        dashWindow.mainpanel.setBackground(DashBoradBgColor);</b>
+<b class="nc">&nbsp;        dashWindow.panel.setBackground(DashBoradBgColor);</b>
+<b class="nc">&nbsp;        dashWindow.cross.setBackground(DashBoradBgColor);</b>
+<b class="nc">&nbsp;        dashWindow.frame.setVisible(true);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-11-23 06:42</div>
+</div>
+</body>
+</html>

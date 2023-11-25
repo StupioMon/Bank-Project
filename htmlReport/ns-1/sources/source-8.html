@@ -1,0 +1,343 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > DepositAdmin</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.mon</a>
+</div>
+
+<h1>Coverage Summary for Class: DepositAdmin (com.sakib)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DepositAdmin</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/47)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">DepositAdmin$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/52)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">DepositAdmin$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/17)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/116)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.mon;
+&nbsp;
+&nbsp;import javax.swing.*;
+&nbsp;import java.awt.*;
+&nbsp;import java.awt.event.ActionEvent;
+&nbsp;import java.awt.event.ActionListener;
+&nbsp;import java.sql.ResultSet;
+&nbsp;import java.sql.SQLException;
+&nbsp;
+<b class="nc">&nbsp;public class DepositAdmin {</b>
+&nbsp;
+<b class="nc">&nbsp;        int startTransaction=55316460;</b>
+&nbsp;
+&nbsp;        public static void main(String[] args) {
+<b class="nc">&nbsp;            DepositAdmin ob = new DepositAdmin();</b>
+<b class="nc">&nbsp;            ob.loadDeposit();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        public void loadDeposit(){
+<b class="nc">&nbsp;            CreateWindow dashWindow = new CreateWindow(150,10,1100,700);</b>
+<b class="nc">&nbsp;            UsedImages obimg = new UsedImages();</b>
+&nbsp;
+<b class="nc">&nbsp;            CustomModelSakib ob1 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;            CustomModelSakib ob2 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;            CustomModelSakib ob3 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;            CustomModelSakib ob4 = new CustomModelSakib();</b>
+<b class="nc">&nbsp;            CustomModelSakib ob5 = new CustomModelSakib();</b>
+&nbsp;
+<b class="nc">&nbsp;            ob1.CreateLabel(50,40,200,50,&quot;Accounts&quot;,ob1.customFont3);</b>
+<b class="nc">&nbsp;            ob1.label.setForeground(Color.white);</b>
+&nbsp;
+<b class="nc">&nbsp;            ob1.CreateTextfieldFirst(50,90,250,35,&quot;Account No.&quot;);</b>
+<b class="nc">&nbsp;            ob1.textField.setBackground(ob1.DashBoradCardColor);</b>
+<b class="nc">&nbsp;            ob1.textField.setForeground(Color.WHITE);</b>
+<b class="nc">&nbsp;            ob1.textField.setCaretColor(Color.WHITE);</b>
+&nbsp;
+<b class="nc">&nbsp;            ob3.CreateTextfield(50,480,250,35,&quot;Account No.&quot;);</b>
+<b class="nc">&nbsp;            ob3.textField.setBackground(ob1.DashBoradCardColor);</b>
+<b class="nc">&nbsp;            ob3.textField.setForeground(Color.WHITE);</b>
+<b class="nc">&nbsp;            ob3.textField.setCaretColor(Color.WHITE);</b>
+&nbsp;
+<b class="nc">&nbsp;            ob4.CreateTextfield(50,530,250,35,&quot;Amount&quot;);</b>
+<b class="nc">&nbsp;            ob4.textField.setBackground(ob1.DashBoradCardColor);</b>
+<b class="nc">&nbsp;            ob4.textField.setForeground(Color.WHITE);</b>
+<b class="nc">&nbsp;            ob4.textField.setCaretColor(Color.WHITE);</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;            ob2.CreateButtonColors(50,580,120,35,&quot;Deposit&quot;,new Color(144, 12, 63));</b>
+<b class="nc">&nbsp;            ob2.button.addActionListener(new ActionListener() {</b>
+&nbsp;                @Override
+&nbsp;                public void actionPerformed(ActionEvent e) {
+&nbsp;
+<b class="nc">&nbsp;                    ValidatorSakib obv= new ValidatorSakib();</b>
+&nbsp;
+<b class="nc">&nbsp;                    if(obv.isValidAmount(ob3.textField.getText())==1){</b>
+<b class="nc">&nbsp;                        if(obv.isValidAmount(ob4.textField.getText())==1){</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;                            int acc_no = Integer.valueOf(ob3.textField.getText());</b>
+<b class="nc">&nbsp;                            int amount = Integer.valueOf(ob4.textField.getText());</b>
+<b class="nc">&nbsp;                            int user_ids=0;</b>
+&nbsp;
+<b class="nc">&nbsp;                            String namef=&quot;&quot;;</b>
+<b class="nc">&nbsp;                            int balance=0;</b>
+&nbsp;
+<b class="nc">&nbsp;                            ResultSet rz = ob2.GetData(&quot;SELECT * FROM accounts WHERE Account_No=&#39;&quot;+acc_no+&quot;&#39;&quot;);</b>
+&nbsp;
+&nbsp;
+&nbsp;                            try{
+<b class="nc">&nbsp;                                while(rz.next()){</b>
+<b class="nc">&nbsp;                                    user_ids = Integer.valueOf(rz.getString(&quot;User_ID&quot;));</b>
+<b class="nc">&nbsp;                                    balance = Integer.valueOf(rz.getString(&quot;Balance&quot;));</b>
+&nbsp;                                }
+<b class="nc">&nbsp;                            } catch (SQLException ex) {</b>
+<b class="nc">&nbsp;                                throw new RuntimeException(ex);</b>
+<b class="nc">&nbsp;                            }</b>
+&nbsp;
+<b class="nc">&nbsp;                            ResultSet rz2 = ob2.GetData(&quot;SELECT * FROM user WHERE User_ID=&#39;&quot;+user_ids+&quot;&#39;&quot;);</b>
+&nbsp;
+&nbsp;                            try{
+<b class="nc">&nbsp;                                while(rz2.next()){</b>
+<b class="nc">&nbsp;                                    namef = rz2.getString(&quot;Name&quot;);</b>
+&nbsp;                                }
+<b class="nc">&nbsp;                            } catch (SQLException ex) {</b>
+<b class="nc">&nbsp;                                throw new RuntimeException(ex);</b>
+<b class="nc">&nbsp;                            }</b>
+&nbsp;
+<b class="nc">&nbsp;                            int check = JOptionPane.showConfirmDialog(null,&quot;Are you sure to deposite the account - &quot;+namef,&quot;Confirm Deletion&quot;,JOptionPane.YES_NO_OPTION);</b>
+&nbsp;
+<b class="nc">&nbsp;                            if(check==0){</b>
+<b class="nc">&nbsp;                                balance=balance+amount;</b>
+<b class="nc">&nbsp;                                String tranCountQuery = &quot;SELECT * FROM count_table&quot;;</b>
+<b class="nc">&nbsp;                                ResultSet rt = ob2.GetData(tranCountQuery);</b>
+<b class="nc">&nbsp;                                int transactionCount=0;</b>
+&nbsp;                                try{
+<b class="nc">&nbsp;                                    while(rt.next()){</b>
+<b class="nc">&nbsp;                                        transactionCount = Integer.valueOf(rt.getString(&quot;transaction&quot;));</b>
+&nbsp;                                    }
+<b class="nc">&nbsp;                                } catch (SQLException ex) {</b>
+<b class="nc">&nbsp;                                    throw new RuntimeException(ex);</b>
+<b class="nc">&nbsp;                                }</b>
+&nbsp;
+<b class="nc">&nbsp;                                String transactionQuery = &quot;INSERT INTO transaction (Transaction_ID,Account_No,Date,Deposit,Withdraw,Available_Balance) VALUES(&#39;&quot;+(startTransaction+transactionCount)+&quot;&#39;,&#39;&quot;+acc_no+&quot;&#39;,curdate(),&#39;&quot;+amount+&quot;&#39;,0,&#39;&quot;+balance+&quot;&#39;)&quot;;</b>
+<b class="nc">&nbsp;                                int transactionStatus = ob2.SendData(transactionQuery);</b>
+<b class="nc">&nbsp;                                if(transactionStatus==1){</b>
+<b class="nc">&nbsp;                                    String updateBalanceQuery = &quot;UPDATE accounts SET Balance=&#39;&quot;+balance+&quot;&#39; WHERE Account_No=&#39;&quot;+acc_no+&quot;&#39;&quot;;</b>
+<b class="nc">&nbsp;                                    int updateBalanceStatus = ob2.SendData(updateBalanceQuery);</b>
+<b class="nc">&nbsp;                                    if(updateBalanceStatus==1){</b>
+<b class="nc">&nbsp;                                        JOptionPane.showMessageDialog(null,&quot;Transaction ID - &quot;+(startTransaction+transactionCount),&quot;Deposit Successful&quot;,JOptionPane.PLAIN_MESSAGE);</b>
+<b class="nc">&nbsp;                                        String CountTranQuery = &quot;UPDATE count_table SET transaction=&#39;&quot;+(transactionCount+1)+&quot;&#39; WHERE count_id=1&quot;;</b>
+<b class="nc">&nbsp;                                        int updateTranCountStatus = ob2.SendData(CountTranQuery);</b>
+<b class="nc">&nbsp;                                        if(updateTranCountStatus==1){</b>
+<b class="nc">&nbsp;                                            ob1.scrollPane.setVisible(false);</b>
+<b class="nc">&nbsp;                                            String Query = &quot;SELECT Account_No,A.User_ID,Name,Gender,Contact,Balance FROM accounts as A,user as U,login as l WHERE A.User_ID=U.User_ID AND A.User_ID=l.Identity_ID AND Status=&#39;Approved&#39;;&quot;;</b>
+<b class="nc">&nbsp;                                            ResultSet rz3 = ob1.GetData(Query);</b>
+<b class="nc">&nbsp;                                            ob1.CreateTable(50,140,1000,300,rz3);</b>
+<b class="nc">&nbsp;                                            dashWindow.mainpanel.add(ob1.scrollPane);</b>
+<b class="nc">&nbsp;                                            ob1.scrollPane.setVisible(true);</b>
+&nbsp;                                        }
+&nbsp;                                    }
+&nbsp;                                }
+&nbsp;                            }
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;                        }else{</b>
+<b class="nc">&nbsp;                            JOptionPane.showMessageDialog(null,&quot;Enter Valid Amount&quot;,&quot;Information Alert&quot;,JOptionPane.INFORMATION_MESSAGE);</b>
+&nbsp;                        }
+&nbsp;
+&nbsp;                    }else{
+<b class="nc">&nbsp;                        JOptionPane.showMessageDialog(null,&quot;Enter Valid Account No&quot;,&quot;Information Alert&quot;,JOptionPane.INFORMATION_MESSAGE);</b>
+&nbsp;                    }
+&nbsp;
+&nbsp;
+&nbsp;                }
+&nbsp;            });
+&nbsp;
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;            ob1.CreateButtonColors(310,90,120,35,&quot;Search&quot;,new Color( 25, 111, 61 ));</b>
+<b class="nc">&nbsp;            ob1.button.addActionListener(new ActionListener() {</b>
+&nbsp;                @Override
+&nbsp;                public void actionPerformed(ActionEvent e) {
+<b class="nc">&nbsp;                    String searchKey = ob1.textField.getText();</b>
+<b class="nc">&nbsp;                    if(searchKey.equals(&quot;&quot;)){</b>
+<b class="nc">&nbsp;                        ob1.scrollPane.setVisible(false);</b>
+<b class="nc">&nbsp;                        String Query = &quot;SELECT Account_No,A.User_ID,Name,Gender,Contact,Balance FROM accounts as A,user as U,login as l WHERE A.User_ID=U.User_ID AND A.User_ID=l.Identity_ID AND Status=&#39;Approved&#39;;&quot;;</b>
+<b class="nc">&nbsp;                        ResultSet rz = ob1.GetData(Query);</b>
+<b class="nc">&nbsp;                        ob1.CreateTable(50,140,1000,300,rz);</b>
+<b class="nc">&nbsp;                        dashWindow.mainpanel.add(ob1.scrollPane);</b>
+<b class="nc">&nbsp;                        ob1.scrollPane.setVisible(true);</b>
+<b class="nc">&nbsp;                    }</b>
+&nbsp;                    else{
+<b class="nc">&nbsp;                        int acc_no = Integer.valueOf(searchKey);</b>
+<b class="nc">&nbsp;                        ob1.scrollPane.setVisible(false);</b>
+<b class="nc">&nbsp;                        String Query = &quot;SELECT Account_No,A.User_ID,Name,Gender,Contact,Balance FROM accounts as A,user as U,login as l WHERE A.User_ID=U.User_ID AND A.User_ID=l.Identity_ID AND Status=&#39;Approved&#39; AND Account_No=&#39;&quot;+acc_no+&quot;&#39;&quot;;</b>
+<b class="nc">&nbsp;                        ResultSet rz = ob1.GetData(Query);</b>
+<b class="nc">&nbsp;                        ob1.CreateTable(50,140,1000,300,rz);</b>
+<b class="nc">&nbsp;                        dashWindow.mainpanel.add(ob1.scrollPane);</b>
+<b class="nc">&nbsp;                        ob1.scrollPane.setVisible(true);</b>
+&nbsp;
+&nbsp;                    }
+&nbsp;                }
+&nbsp;            });
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;            String Query = &quot;SELECT Account_No,A.User_ID,Name,Gender,Contact,Balance FROM accounts as A,user as U,login as l WHERE A.User_ID=U.User_ID AND A.User_ID=l.Identity_ID AND Status=&#39;Approved&#39;&quot;;</b>
+<b class="nc">&nbsp;            ResultSet rz = ob1.GetData(Query);</b>
+<b class="nc">&nbsp;            ob1.CreateTable(50,140,1000,300,rz);</b>
+<b class="nc">&nbsp;            dashWindow.mainpanel.add(ob1.scrollPane);</b>
+&nbsp;
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;            dashWindow.mainpanel.add(ob1.label);</b>
+<b class="nc">&nbsp;            dashWindow.mainpanel.add(ob1.textField);</b>
+<b class="nc">&nbsp;            dashWindow.mainpanel.add(ob3.textField);</b>
+<b class="nc">&nbsp;            dashWindow.mainpanel.add(ob4.textField);</b>
+<b class="nc">&nbsp;            dashWindow.mainpanel.add(ob1.button);</b>
+<b class="nc">&nbsp;            dashWindow.mainpanel.add(ob2.button);</b>
+&nbsp;
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;            JLabel titleLabel = new JLabel(&quot;Smartie Commercial Bank&quot;);</b>
+<b class="nc">&nbsp;            titleLabel.setBounds(10,1,300,30);</b>
+<b class="nc">&nbsp;            titleLabel.setForeground(Color.white);</b>
+<b class="nc">&nbsp;            dashWindow.panel.add(titleLabel);</b>
+&nbsp;
+<b class="nc">&nbsp;            dashWindow.mainpanel.setBackground(ob1.DashBoradBgColor);</b>
+<b class="nc">&nbsp;            dashWindow.panel.setBackground(ob1.DashBoradBgColor);</b>
+<b class="nc">&nbsp;            dashWindow.cross.setBackground(ob1.DashBoradBgColor);</b>
+<b class="nc">&nbsp;            dashWindow.frame.setVisible(true);</b>
+&nbsp;
+&nbsp;        }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-11-23 06:42</div>
+</div>
+</body>
+</html>
